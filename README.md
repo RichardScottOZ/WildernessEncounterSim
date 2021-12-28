@@ -5,7 +5,7 @@ Randomly rolls encounters using OD&D (LBB) Vol-3 tables, and reports total EHD (
 
 Specify desired terrain on command-line; output is a thousand encounter EHD values, for external statistical processing.
 
-#Python version
+# Python version
 In the python/notebooks folder there is a jupyter notebook implementing this.  It will randomly select a terrain, otherwise set the one you want.
 
 # Blog

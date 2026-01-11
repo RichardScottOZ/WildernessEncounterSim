@@ -116,6 +116,8 @@ class Dice:
         if self.multiplier >= 0:
             roll *= self.multiplier
         else:
+            # Division logic: (roll - 1) // divisor + 1
+            # This ensures minimum result of 1 and proper integer division
             roll = (roll - 1) // (-self.multiplier) + 1
         roll += self.addition
         return roll

@@ -92,11 +92,15 @@ class Table:
         @param index 1-indexed row number
         @return Random non-null entry
         """
-        while True:
+        max_attempts = 1000
+        attempts = 0
+        while attempts < max_attempts:
             roll = Dice.roll(self.get_num_cols())
             entry = self.table[index][roll]
             if entry != self.NULL_ENTRY:
                 return entry
+            attempts += 1
+        raise ValueError(f"No non-null entries found in row {index} after {max_attempts} attempts")
     
     def get_random_entry_on_col(self, index):
         """
@@ -104,11 +108,15 @@ class Table:
         @param index 1-indexed column number
         @return Random non-null entry
         """
-        while True:
+        max_attempts = 1000
+        attempts = 0
+        while attempts < max_attempts:
             roll = Dice.roll(self.get_num_rows())
             entry = self.table[roll][index]
             if entry != self.NULL_ENTRY:
                 return entry
+            attempts += 1
+        raise ValueError(f"No non-null entries found in column {index} after {max_attempts} attempts")
     
     def get_entry(self, row, col):
         """

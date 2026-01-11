@@ -196,7 +196,7 @@ class WildernessEncounterSim:
     
     def str_to_dbl(self, s):
         """
-        Convert a string to a double.
+        Convert a string to a float.
         Invalid strings return 0.
         @param s String to convert
         @return Float value or 0
